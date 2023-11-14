@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->date('release_date');
+            $table->text('overview');
+            $table->string('poster_path')->nullable();
+            $table->decimal('vote_average', 3, 1);
+            $table->string('genre_ids');
+            $table->integer('tmdb_id');
             $table->timestamps();
         });
     }
