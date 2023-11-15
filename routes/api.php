@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Http\Request;
@@ -34,6 +35,8 @@ Route::get('/series', [SerieController::class, 'index']);
 Route::get('/series/top', [SerieController::class, 'getTopSeries']);
 
 Route::get('/search', [SearchController::class, 'search']);
+Route::get('/movies/{id}', [DetailController::class, 'showMovie']);
+Route::get('/series/{id}', [DetailController::class, 'showSeries']);
 
 // Favorites routes
 Route::middleware('auth:sanctum')->group(function () {
