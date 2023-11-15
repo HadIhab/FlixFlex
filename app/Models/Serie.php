@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Serie extends Model
 {
     use HasFactory;
-
+    protected $primaryKey = 'id';
     protected $fillable = [
         'name',
         'first_air_date',

@@ -3,6 +3,7 @@
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\TrailerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -35,8 +36,14 @@ Route::get('/series', [SerieController::class, 'index']);
 Route::get('/series/top', [SerieController::class, 'getTopSeries']);
 
 Route::get('/search', [SearchController::class, 'search']);
+
+// Movies & Series details
 Route::get('/movies/{id}', [DetailController::class, 'showMovie']);
 Route::get('/series/{id}', [DetailController::class, 'showSeries']);
+
+// Trailer
+Route::get('/watch-trailer/{type}/{id}', [TrailerController::class, 'watchTrailer']);
+
 
 // Favorites routes
 Route::middleware('auth:sanctum')->group(function () {
