@@ -25,5 +25,7 @@ Route::post('/auth/register', [UserController::class, 'createUser']);
 Route::post('/auth/login', [UserController::class, 'loginUser']);
 
 Route::get('/movies', [MovieController::class, 'index']);
+Route::get('/movies/top', [MovieController::class, 'getTopMovies']);
 
 Route::get('/series', [SerieController::class, 'index']);
+Route::get('/series/top', [SerieController::class, 'getTopSeries']);
