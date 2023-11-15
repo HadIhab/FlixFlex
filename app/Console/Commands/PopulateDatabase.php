@@ -25,8 +25,6 @@ class PopulateDatabase extends Command
             'api_key' => $apiKey,
         ])->json();
 
-        //dd($moviesResponse, $seriesResponse);
-
         $this->insertDataIntoMoviesTable(array_slice($moviesResponse['results'], 0, 500));
         $this->insertDataIntoSeriesTable(array_slice($seriesResponse['results'], 0, 500));
 
@@ -69,11 +67,4 @@ class PopulateDatabase extends Command
     }
 }
 
-/* php artisan make:model Patient
- * php artisan make:controller PatientController
-  266  php artisan make:resource PatientResource
-  267  php artisan make:resource PatientCollection --collection
-  268  php artisan make:request StorePatientRequest
-  269  php artisan make:request UpdatePatientRequest
 
- */
