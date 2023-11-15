@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -32,6 +33,7 @@ Route::get('/movies/top', [MovieController::class, 'getTopMovies']);
 Route::get('/series', [SerieController::class, 'index']);
 Route::get('/series/top', [SerieController::class, 'getTopSeries']);
 
+Route::get('/search', [SearchController::class, 'search']);
 
 // Favorites routes
 Route::middleware('auth:sanctum')->group(function () {
@@ -42,8 +44,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/favorites/series/{seriesId}', [FavoriteController::class, 'removeSeries']);
 
     Route::get('/favorites', [FavoriteController::class, 'getFavorites']);
-
-    Route::get('/search', [SearchController::class, 'search']);
-
 });
 
